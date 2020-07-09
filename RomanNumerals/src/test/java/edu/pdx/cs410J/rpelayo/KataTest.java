@@ -41,6 +41,10 @@ public class KataTest {
     public void romanNumeralFor40IsXL() {
         assertThat(Kata.romanNumeralFor(40), equalTo("XL"));
     }
+    @Test
+    public void romanNumeralFor4999IsMMMMCMXCIX() {
+        assertThat(Kata.romanNumeralFor(4999), equalTo("MMMMCMXCIX"));
+    }
 
 
 }
