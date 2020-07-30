@@ -1,5 +1,7 @@
 package edu.pdx.cs410J.rpelayo;
 
+import java.io.*;
+
 /**
  * A class for getting started with a code kata
  *
@@ -7,10 +9,41 @@ package edu.pdx.cs410J.rpelayo;
  * class (and its tests).
  */
 public class Kata {
-                                                                                    
+
 
   public static void main(String[] args) {
-    System.err.println("Missing command line arguments");
-    System.exit(1);
+    try {
+      String fileName = "Data.txt";
+      File file = null;
+      FileReader fReader = null;
+      BufferedReader bReader = null;
+
+    /*
+    int row = Integer.parseInt(args[0]);
+    int col = Integer.parseInt(args[1]);
+
+    if (row < 0 || row > 100 || col < 0 || col > 100) {
+      System.err.println("Wrong input");
+      System.exit(1);
+    }
+    */
+
+      file = new File(fileName);
+      fReader = new FileReader(file);
+      bReader = new BufferedReader(fReader);
+
+      int row = Integer.parseInt(bReader.readLine());
+      int column = Integer.parseInt(bReader.readLine());
+      String board[] = new String[row];
+
+      for (int i = 0; i < row; ++row) {
+        board[i] = bReader.readLine();
+      }
+      System.out.println(board);
+
+
+
+    }
+    catch(Exception e){ }
   }
 }
