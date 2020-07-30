@@ -9,24 +9,12 @@ import java.io.*;
  * class (and its tests).
  */
 public class Kata {
-
-
   public static void main(String[] args) {
     try {
       String fileName = "Data.txt";
       File file = null;
       FileReader fReader = null;
       BufferedReader bReader = null;
-
-    /*
-    int row = Integer.parseInt(args[0]);
-    int col = Integer.parseInt(args[1]);
-
-    if (row < 0 || row > 100 || col < 0 || col > 100) {
-      System.err.println("Wrong input");
-      System.exit(1);
-    }
-    */
 
       file = new File(fileName);
       fReader = new FileReader(file);
