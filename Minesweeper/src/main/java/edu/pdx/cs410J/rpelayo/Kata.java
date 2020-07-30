@@ -23,15 +23,37 @@ public class Kata {
       int row = Integer.parseInt(bReader.readLine());
       int column = Integer.parseInt(bReader.readLine());
       String board[] = new String[row];
+      int board_result[][] = new int[row][column];
 
-      for (int i = 0; i < row; ++row) {
+      for (int i = 0; i < row; ++i) {
         board[i] = bReader.readLine();
       }
       System.out.println(board);
 
+      for(int i = 0; i < row; ++i){
+        for(int j = 0; j < column; ++j){
+          board_result[i][j] = 0;
+        }
+      }
 
-
+      for(int i = 0; i < row; ++i){
+        for(int j = 0; j < column; ++j){
+          if(board[i].charAt(j) == '*')
+          {
+            board_result[i - 1][j] += 1;
+            board_result[i + 1][j] += 1;
+            board_result[i][j + 1] += 1;
+            board_result[i][j - 1] = -1;
+          }
+          if(board[i].charAt(j) == '.')
+          {
+            board_result[i][j] = 0;
+          }
+        }
+      }
     }
     catch(Exception e){ }
   }
+
+
 }
