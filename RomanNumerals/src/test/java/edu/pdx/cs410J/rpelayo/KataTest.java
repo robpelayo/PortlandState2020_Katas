@@ -43,4 +43,8 @@ public class KataTest {
     }
 
 
+    @Test
+    public void romanNumeralFor2018IsMMXVIII() {
+        assertThat(Kata.romanNumeralFor(2018), equalTo("MMXVIII"));
+    }
 }
